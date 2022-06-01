@@ -14,14 +14,20 @@ class Usuario (models.Model):
     apellidos = models.CharField("Apellidos", max_length=50)
     nombre_usuario = models.CharField("Nombre Usuario", max_length=20)
     contrasenia = models.CharField("Contrasenia", max_length=100)
-    sexo = models.CharField("Sexo", choices=sexo)
+    sexo = models.CharField("Sexo", choices=sexo, max_length=1)
     correo_electronico = models.EmailField("Correo Electronico", max_length=50)
     foto_perfil = models.ImageField("Foto De Perfil", blank=True)
     edad = models.PositiveIntegerField("Edad")
+
+    def __str__(self):
+        return str(self.id ) + ' ' + self.nombre + ' ' + self.apellidos
 
 
 
 class Resenia(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    calificacion = models.IntegerField("Calificacion",max_length=1)
+    calificacion = models.IntegerField("Calificacion")
     comentario = models.TextField("Comentario")
+
+    def __str__(self):
+        return str(self.id ) + ' ' + self.usuario + ' ' + self.calificacion
