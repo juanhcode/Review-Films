@@ -8,7 +8,7 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(40.0),
+          padding: const EdgeInsets.all(40.0),
           child: Form(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -18,12 +18,11 @@ class ProfileScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(90),
                     child: const Image(
                       image: AssetImage('assets/Moon_Knight.webp'),
-                      width: 500,
-                      height: 500,
+                      height: 410,
                     ),
                   ),
                 ),
-                SizedBox(height: 10.0),
+                const SizedBox(height: 10.0),
                 const Center(
                   child: Text('Moon Knight.',
                       style: TextStyle(
@@ -32,7 +31,7 @@ class ProfileScreen extends StatelessWidget {
                           fontSize: 32,
                           fontWeight: FontWeight.bold)),
                 ),
-                SizedBox(height: 10.0),
+                const SizedBox(height: 10.0),
                 const Center(
                   child: Text(
                       'Un trabajador de un museo que lucha contra un trastorno de identidad disociativo, recibe los poderes de un dios egipcio de la luna. Pronto descubre que estos poderes pueden ser tanto una bendición como una maldición.',
@@ -41,11 +40,13 @@ class ProfileScreen extends StatelessWidget {
                         color: Colors.black,
                       )),
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       minimumSize: const Size(100, 40), primary: Colors.orange),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/login');
+                  },
                   child: const Center(child: const Text('Iniciar Sesion')),
                 ),
               ],
