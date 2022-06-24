@@ -13,7 +13,7 @@ class IniciarSesionApp extends StatelessWidget {
       title: _title,
       home: Scaffold(
         appBar: AppBar(title: const Text(_title), backgroundColor: Colors.transparent, elevation: 0,
-        titleTextStyle: TextStyle(color: Colors.black, fontSize: 20),),
+        titleTextStyle: const TextStyle(color: Colors.black, fontSize: 20),),
         body: const Login(),
       ),
     );

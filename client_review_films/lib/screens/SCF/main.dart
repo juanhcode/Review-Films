@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: _title,
       home: Scaffold(
         appBar: AppBar(title: const Text(_title), backgroundColor: Colors.transparent, elevation: 0,
-        titleTextStyle: TextStyle(color: Colors.black, fontSize: 20),),
+        titleTextStyle: const TextStyle(color: Colors.black, fontSize: 20),),
         body: const Register(),
       ),
     );
@@ -31,15 +31,15 @@ class Register extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(40.0),
+          padding: const EdgeInsets.all(40.0),
           child: Form(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text('ReviewFilms',style: TextStyle(fontFamily: 'Inter', color: Colors.orange,
                 fontSize: 32, fontWeight: FontWeight.bold)),
-                SizedBox(height: 15.0,),
-                Text("Correo Electronico"),
+                const  SizedBox(height: 15.0,),
+                const Text("Correo Electronico"),
                 TextFormField(
                   autofocus: false,
                   // validator: validateEmail,
@@ -49,9 +49,9 @@ class Register extends StatelessWidget {
                   prefixIcon: Icon(Icons.email),
                   ),
                 ),
-                SizedBox(height: 20.0,),
-                Text('Nombre'),
-                SizedBox(height: 5.0,),
+                const SizedBox(height: 20.0,),
+                const Text('Nombre'),
+                const SizedBox(height: 5.0,),
                 TextFormField(
                   autofocus: false,
                   // validator: validateEmail,
@@ -61,9 +61,9 @@ class Register extends StatelessWidget {
                   prefixIcon: Icon(Icons.person),
                   ),
                 ),
-                SizedBox(height: 20.0,),
-                Text('Apellidos'),
-                SizedBox(height: 5.0,),
+                const SizedBox(height: 20.0,),
+                const Text('Apellidos'),
+                const SizedBox(height: 5.0,),
                 TextFormField(
                   autofocus: false,
                   // validator: validateEmail,
@@ -73,9 +73,9 @@ class Register extends StatelessWidget {
                   prefixIcon: Icon(Icons.person),
                   ),
                 ),
-                SizedBox(height: 20.0,),
-                Text('Contraseña'),
-                SizedBox(height: 5.0,),
+                const  SizedBox(height: 20.0,),
+                const Text('Contraseña'),
+                const SizedBox(height: 5.0,),
                 TextFormField(
                   autofocus: false,
                   // validator: validateEmail,
@@ -85,9 +85,9 @@ class Register extends StatelessWidget {
                   prefixIcon: Icon(Icons.lock),
                   ),
                 ),
-                SizedBox(height: 20.0,),
-                Text('Confirmacion de Contraseña'),
-                SizedBox(height: 5.0,),
+                const SizedBox(height: 20.0,),
+                const Text('Confirmacion de Contraseña'),
+                const SizedBox(height: 5.0,),
                 TextFormField(
                   autofocus: false,
                   // validator: validateEmail,
@@ -98,11 +98,11 @@ class Register extends StatelessWidget {
                   ),
                   ),
                 ),
-                SizedBox(height: 40.0,),
+                const SizedBox(height: 40.0,),
                 ElevatedButton(
                 style: ElevatedButton.styleFrom(minimumSize: const Size(100, 40),primary: Colors.orange ),
                 onPressed: () {},
-                child: const Center(child: const Text('Registrarme')),
+                child: const Center(child:Text('Registrarme')),
                 
                 ),
               ],
