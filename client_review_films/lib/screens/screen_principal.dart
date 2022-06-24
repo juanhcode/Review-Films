@@ -13,7 +13,7 @@ class PrincipalScreen extends StatelessWidget {
     print(moviesProvider.onDisplayMovies);
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Review Films'),
+          title: const Text('Review Filmss'),
           elevation: 0,
           actions: [
             IconButton(
