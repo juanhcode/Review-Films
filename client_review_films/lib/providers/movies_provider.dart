@@ -74,6 +74,7 @@ class MoviesProvider extends ChangeNotifier {
     return searchResponse.results;
   }
 
+/*
   void getSuggestionsByQuery(String searchTerm) {
     debouncer.value = '';
     debouncer.onValue = (value) async {
@@ -87,4 +88,5 @@ class MoviesProvider extends ChangeNotifier {
     Future.delayed(const Duration(milliseconds: 301))
         .then((_) => timer.cancel());
   }
+  */
 }

@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
-class RegisterScreen extends StatelessWidget {
+class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
+
+  @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
+  var emailController = TextEditingController();
+  var nombreController = TextEditingController();
+  var apellidoController = TextEditingController();
+  var contraseController = TextEditingController();
+  var confirmarPassController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +42,7 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 const Text("Correo Electronico"),
                 TextFormField(
+                  controller: emailController,
                   autofocus: false,
                   // validator: validateEmail,
                   // onSaved: (value) => _username = value,
@@ -46,6 +59,7 @@ class RegisterScreen extends StatelessWidget {
                   height: 5.0,
                 ),
                 TextFormField(
+                  controller: nombreController,
                   autofocus: false,
                   // validator: validateEmail,
                   // onSaved: (value) => _username = value,
@@ -62,6 +76,7 @@ class RegisterScreen extends StatelessWidget {
                   height: 5.0,
                 ),
                 TextFormField(
+                  controller: apellidoController,
                   autofocus: false,
                   // validator: validateEmail,
                   // onSaved: (value) => _username = value,
@@ -78,6 +93,7 @@ class RegisterScreen extends StatelessWidget {
                   height: 5.0,
                 ),
                 TextFormField(
+                  controller: contraseController,
                   autofocus: false,
                   // validator: validateEmail,
                   // onSaved: (value) => _username = value,
@@ -94,6 +110,7 @@ class RegisterScreen extends StatelessWidget {
                   height: 5.0,
                 ),
                 TextFormField(
+                  controller: confirmarPassController,
                   autofocus: false,
                   // validator: validateEmail,
                   // onSaved: (value) => _username = value,
@@ -108,7 +125,9 @@ class RegisterScreen extends StatelessWidget {
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       minimumSize: const Size(100, 40), primary: Colors.orange),
-                  onPressed: () {},
+                  onPressed: () {
+                    register();
+                  },
                   child: const Center(child: Text('Registrarme')),
                 ),
               ],
@@ -117,5 +136,36 @@ class RegisterScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> register() async {
+    if (emailController.text.isNotEmpty &&
+        nombreController.text.isNotEmpty &&
+        apellidoController.text.isNotEmpty &&
+        contraseController.text.isNotEmpty &&
+        confirmarPassController.text.isNotEmpty) {
+      if (confirmarPassController.text.toString() ==
+          confirmarPassController.text.toString()) {
+        var response = await http.post(
+            Uri.parse(
+                'https://django-flutter-rf.herokuapp.com/api/create/user/'),
+            body: ({
+              "nombre": nombreController.text.toString(),
+              "apellidos": apellidoController.text.toString(),
+              "nombre_usuario": "",
+              "password": contraseController.text.toString(),
+              "sexo": "M",
+              "correo_electronico": emailController.text.toString(),
+              "foto_perfil": "",
+              "edad": 1
+            }));
+        if (response.statusCode == 200) {
+          print('ya puedo ir a la pagina principal');
+        }
+      }
+    } else {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('Datos invalidos')));
+    }
   }
 }
