@@ -12,8 +12,8 @@ class CardSwiper extends StatelessWidget {
     final tamanio =
         MediaQuery.of(context).size; //Obtengo el tamaño de la pantalla
 
-    if (movies.length == 0) {
-      return Container(
+    if (movies.isEmpty) {
+      return SizedBox(
           width: double.infinity,
           height: tamanio.height * 0.5,
           child: const Center(

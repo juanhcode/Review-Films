@@ -13,7 +13,7 @@ class AnonymusView extends StatelessWidget {
       title: _title,
       home: Scaffold(
         appBar: AppBar(title: const Text(_title), backgroundColor: Colors.transparent, elevation: 0,
-        titleTextStyle: TextStyle(color: Colors.black, fontSize: 20),),
+        titleTextStyle: const TextStyle(color: Colors.black, fontSize: 20),),
         body: const Login(),
       ),
     );
@@ -31,7 +31,7 @@ class Login extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(40.0),
+          padding: const EdgeInsets.all(40.0),
           child: Form(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,18 +46,18 @@ class Login extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 10.0),
+                const SizedBox(height: 10.0),
                 const Center(child: Text('Moon Knight.',style: TextStyle(fontFamily: 'Inter', color: Colors.black,
                 fontSize: 32, fontWeight: FontWeight.bold)
                   ),
                 ),
-                SizedBox(height: 10.0),
+                const SizedBox(height: 10.0),
                 const Center(child: Text('Un trabajador de un museo que lucha contra un trastorno de identidad disociativo, recibe los poderes de un dios egipcio de la luna. Pronto descubre que estos poderes pueden ser tanto una bendición como una maldición.',
                 style: TextStyle(fontFamily: 'Inter', color: Colors.black,
                 )
                   ),
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 ElevatedButton(
                 style: ElevatedButton.styleFrom(minimumSize: const Size(100, 40),primary: Colors.orange ),
                 onPressed: () {},

@@ -21,17 +21,17 @@ class LoginScreen extends StatelessWidget {
                           fontSize: 32,
                           fontWeight: FontWeight.bold)),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20.0,
                 ),
                 const Center(
                   child: Text(
                       'Por favor inicia sesion digitando tus credenciales en los campos de abajo.'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40.0,
                 ),
-                Text("Correo Electronico"),
+                const Text("Correo Electronico"),
                 TextFormField(
                   autofocus: false,
                   // validator: validateEmail,
@@ -41,11 +41,11 @@ class LoginScreen extends StatelessWidget {
                     prefixIcon: Icon(Icons.email),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20.0,
                 ),
-                Text('Contraseña'),
-                SizedBox(
+                const Text('Contraseña'),
+                const SizedBox(
                   height: 5.0,
                 ),
                 TextFormField(
@@ -57,11 +57,11 @@ class LoginScreen extends StatelessWidget {
                     prefixIcon: Icon(Icons.lock),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40.0,
                 ),
-                Text('Olvidaste tu contraseña?'),
-                SizedBox(
+                const Text('Olvidaste tu contraseña?'),
+                const SizedBox(
                   height: 10.0,
                 ),
                 ElevatedButton(
